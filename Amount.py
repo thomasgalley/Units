@@ -35,3 +35,5 @@ class Amount:
                 return self.coefficient*others.coefficient  
     def __str__(self):
         return str(self.coefficient)+'*'+self.unit
+    def __add__(self, other):
+        return str(self.add(other))+'*'+other.unit
