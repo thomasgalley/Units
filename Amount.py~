@@ -26,12 +26,4 @@ class Amount:
                  raise ValueError('Incompatibleunits')
                  return
     def multiply(self,others):
-            if self.quantity==others.quantity:
-                if self.unit==others.unit:
-                    return self.coefficient*others.coefficient
-                else:
-                    return self.coefficient*others.coefficient  
-            else:
-                return self.coefficient*others.coefficient  
-    def __str__(self):
-        return str(self.coefficient)+'*'+self.unit
+        return self.coefficient*others.coefficient
