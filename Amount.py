@@ -15,7 +15,7 @@ class Amount:
         if self.unit=='minutes' and conversionunit=='seconds':
             return 60*self.coefficient
         else:
-            return self.coefficient
+            raise TypeError('Incomparibleunits') 
     def add(self, others):
             if self.quantity==others.quantity:
                 if self.unit==others.unit:
@@ -50,6 +50,7 @@ class Amount:
                 else:
                     return False
         else:
-            raise TypeError('incompatibleunits')
+            raise TypeError('Incompatibleunits')
   
+
 

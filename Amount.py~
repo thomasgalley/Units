@@ -23,7 +23,7 @@ class Amount:
                 else:
                     return others.coefficient+self.convert(others.unit)     
             else:
-                 raise ValueError('Incompatibleunits')
+                 raise TypeError('Incompatibleunits')
                  return
     def multiply(self,others):
             if self.quantity==others.quantity:
@@ -37,3 +37,19 @@ class Amount:
         return str(self.coefficient)+'*'+self.unit
     def __add__(self, other):
         return str(self.add(other))+'*'+other.unit
+    def __eq__(self,other):
+        if self.quantity==other.quantity:
+            if self.unit==other.unit:
+                if self.coefficient==other.coefficient:
+                    return True
+                else:
+                    return False
+            else:
+                if other.coefficient==self.convert(other.unit):
+                        return True
+                else:
+                    return False
+        else:
+            raise TypeError('incompatibleunits')
+  
+
